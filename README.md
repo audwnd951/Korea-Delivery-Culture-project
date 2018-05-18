@@ -4,7 +4,7 @@
 
 
 
-# 서론
+## 서론
 
 우리나라는 세계적으로 배달문화가 발달한 나라로 다양한 종류의 음식들을 배달 가능하다
 혼자 사는 1인가구가 늘어나면서 간편하고 편리한 음식에 수요가 증가함에 따라서 
@@ -17,7 +17,7 @@
 ※데이터 자료는 미국 커뮤니티 사이트 reddit에 Food Delivery in korea 라는 게시물을 보고 여러사람들이 남긴 댓글을 R크롤링해 조사한 자료입니다.
 
 
-# 본론
+## 본론
 
 
 #### 사용된 라이브러리
@@ -72,7 +72,7 @@
     setwd("c:/r")
     data1<-read.csv("reddit.txt",header=F)
 
-### text mining
+#### text mining
 
     벡터형을 -> VCorpus 변환후 작업 시작
     corp1 <- VCorpus(VectorSource(data1))  
@@ -132,7 +132,7 @@
     library(ggthemes)
 
 
-### ggplot 그래프 도출
+#### ggplot 그래프 도출
 
     ggplot(m4,aes(x=reorder(x,y),y=y,fill=y))+
         geom_bar(stat='identity') +
@@ -143,7 +143,7 @@
                                        colour="black" , size=8))+ylim(0,20) + theme_few()
 
 
-### 단어별 상관관계 분석
+#### 단어별 상관관계 분석
 
     키워드 준비 / 빈도수 11개 이상 되는것끼리 묶음
     keyword<-rownames(as.matrix(m3[(m3)>=11]))
@@ -196,7 +196,7 @@
     inspect(sort(res_rul,by='lift'))
 
 
-### 상관 관계확인
+#### 상관 관계확인
 
          lhs          rhs       support confidence lift     count
     [1]  {time}    => {service} 0.1250  1.0000000  3.200000 2   
@@ -217,7 +217,7 @@
     [16] {}        => {drivers} 0.4375  0.4375000  1.000000 7 
 
 
-### 단어별로 겹치는 빈도수
+#### 단어별로 겹치는 빈도수
 
     b1 <- t(text2)%*%text2
 
@@ -226,7 +226,7 @@
     b3 <- b1-diag(diag(b1))
 
 
-### gplot을 이용해 상관 관계 그래프 도출
+#### gplot을 이용해 상관 관계 그래프 도출
 
     install.packages("sna")
     install.packages("rgl")
@@ -243,7 +243,7 @@
           label.cex = sqrt(b2)*0.7,   
           edge.lwd = 1)
 
-# 결론
+## 결론
 
 최종적으로 단어의 상관관계를 분석하여 그래프로 도출해본 결과 빈도수가 가장 많은 drivers의 관심이 service 라는 
 단어와 uber 시스템의 관계도가 가장 가까운 것으로 보아 배달해주는 사람의 서비스에 대한 관여도가 높은것으로 추측이 된다. 
