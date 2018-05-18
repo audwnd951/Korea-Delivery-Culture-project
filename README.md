@@ -96,7 +96,9 @@
     "arent","find","yeah","thing","doesnt","youre","pretty","deleted","put","stuff","floor","eat","lot","dont","eat","live")
 
     word2 <- c(stopwords("SMART"),
-    "whats","video","sounds","put","sit","generally","didnt","understand","shit","theyre","fuck","basically","compared","south","korea","food","delivery","people")
+    "whats","video","sounds","put","sit","generally","didnt","understand","shit","theyre","fuck","basically",
+    "compared","south","korea","food","delivery","people")
+
 
     불필요한 단어 제거
     corp2 <- tm_map(corp2,removeWords,word1)      
