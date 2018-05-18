@@ -20,7 +20,7 @@
 # 본론
 
 
-### 사용된 라이브러리
+#### 사용된 라이브러리
     
     library(rvest)          
     library(tm)          
@@ -33,7 +33,7 @@
     library(rgl)
 
 
-### 게시물 크롤링
+#### 게시물 크롤링
 
     첫번째 게시물 주소
     html<-read_html("https://www.reddit.com/r/videos/comments/69ix3e/food_delivery_in_korea/")
@@ -243,7 +243,7 @@
           label.cex = sqrt(b2)*0.7,   
           edge.lwd = 1)
 
-## 결론
+# 결론
 
 최종적으로 단어의 상관관계를 분석하여 그래프로 도출해본 결과 빈도수가 가장 많은 drivers의 관심이 service 라는 
 단어와 uber 시스템의 관계도가 가장 가까운 것으로 보아 배달해주는 사람의 서비스에 대한 관여도가 높은것으로 추측이 된다. 
